@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">NL2 Control Panel</string>
+    <string name="gates">Gates</string>
+    <string name="gates_open">Open</string>
+    <string name="gates_close">Close</string>
+    <string name="restraints">Restraints</string>
+    <string name="restraints_open">Unlock</string>
+    <string name="restraints_close">Lock</string>
+    <string name="platform">Platform</string>
+    <string name="platform_open">Raise</string>
+    <string name="platform_close">Lower</string>
+    <string name="flyercar">Car</string>
+    <string name="flyercar_open">Unlock</string>
+    <string name="flyercar_close">Lock</string>
+    <string name="dispatch">Dispatch</string>
+    <string name="connect_host">Host</string>
+    <string name="connect_port">Port</string>
+    <string name="connect">Connect</string>
+    <string name="colon" translatable="false">:</string>
+    <string name="default_port" translatable="false">15151</string>
+    <string name="set_current_station">Set Station</string>
+</resources>

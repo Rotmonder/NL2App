@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/connect_host"
+        android:inputType="textNoSuggestions"
+        android:hint="@string/connect_host"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/connect_port"/>
+
+    <EditText
+        android:text="@string/default_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@id/connect_port"
+        android:hint="@string/connect_port"
+        android:layout_alignParentRight="true"/>
+
+    <!--suppress AndroidMissingOnClickHandler -->
+    <Button
+        android:text="@string/connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/connect"
+        android:layout_below="@id/connect_host"
+        android:onClick="onClickConnect"/>
+</RelativeLayout>

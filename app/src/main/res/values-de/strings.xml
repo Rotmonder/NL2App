@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NL2 Control Panel</string>
+    <string name="flyercar_close">Sperren</string>
+    <string name="flyercar_open">Entsperren</string>
+    <string name="gates">Tore</string>
+    <string name="gates_close">Schließen</string>
+    <string name="gates_open">Öffnen</string>
+    <string name="platform">Plattform</string>
+    <string name="platform_close">Herunterfahren</string>
+    <string name="platform_open">Hochfahren</string>
+    <string name="restraints">Bügel</string>
+    <string name="restraints_close">Schließen</string>
+    <string name="restraints_open">Öffnen</string>
+    <string name="dispatch">Starten</string>
+    <string name="flyercar">Wagen</string>
+    <string name="connect">Verbinden</string>
+    <string name="connect_host">Adresse</string>
+    <string name="connect_port">Port</string>
+    <string name="set_current_station">Station ändern</string>
+</resources>

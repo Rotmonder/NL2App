@@ -1,0 +1,24 @@
+language: android
+jdk: oraclejdk8
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-25.0.2
+    - android-25
+    - extra-android-m2repository
+    - extra-google-m2repository
+    - extra-android-support
+    - extra-google-google_play_services
+notifications:
+  email: false
+deploy:
+  provider: releases
+  api_key:
+    secure: O4oLFAT23K3SvnlSlKcwYqHm+/QBohJQzrq35XXX4rdFIIdoZXnoNsz1YAx2HZRti/ToKWO0UjxZ6+Sy+HeyqQjGHpROVdrmB0wurP2ZbQXf00Tmq88cikaXOeEPD9l6IPNq/hBagk697Xu7Z/wBF9bL8VIoMPcOXfRp7b06hEpVi5u837UfW8V7Mnv3HRpuzx7sgHTifovznlWqR3JnFvVRpmm+Ty439AGy96pTqGh8m5U1mh4bbJJrjELqnqo+VfttHosJwhdmRgckUEvi5NT+P+imBrAGRiBC5Vk8pyYG45SukkHhoLyxey36AC2Kz2MgrYyUPEWLnyyyv3ntB6UBp5X1OeJMyZy+ZCZRqdm/XBC9/1ZqHZktrL4viYrgsOwEQ1pXxTWPiWbkt2LmJU7ai/RFHZaydD5oHknPR4VQq/eLziBQKu75uE9bJ+X4156aKPQ0udeE5K1MNLIg90jOjzxRmNqgOuwkAtvwfxZnXUilERw9C3EgPDWrdbO6WYDnk9Zuz23r/xB9y6N3cA6LZC4KFFHO5Xxl/kgIAU+6a478/ayPq9H2tNctaDN74WB4cPo9e2+bs0KuHvtvJcSKtpnoSrvT/V9Y/FhpQyAUaEtIfIGOheWJDiUcDo0blEnFSxh1wBVy1KeOLRdX9mBgMccZjpEL5z/EXROU0x4=
+  file: app/build/outputs/apk/app*release*.apk
+  file_glob: true
+  skip_cleanup: true
+  on:
+    repo: JackDn/NL2App
+    tags: true

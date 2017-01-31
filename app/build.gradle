@@ -22,6 +22,9 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -33,7 +36,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'me.jackdn:nolimits-telemetry-api:1.0-SNAPSHOT'
     compile 'org.jetbrains.anko:anko-sdk21:0.9.1'
-    compile 'com.android.support:support-core-utils:25.1.0'
+    compile 'com.android.support:support-core-utils:25.1.1'
 }
 
 repositories {
@@ -41,5 +44,8 @@ repositories {
     mavenCentral()
     maven {
         url  "http://dl.bintray.com/jetbrains/anko"
+    }
+    maven {
+        url  "http://vps213640.ovh.net:8081/repository/maven-public/"
     }
 }

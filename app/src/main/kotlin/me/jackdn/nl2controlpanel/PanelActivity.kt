@@ -13,10 +13,7 @@ import me.jackdn.nl2telemetry.packet.outgoing.PacketGetCurrentCoasterAndNearestS
 import me.jackdn.nl2telemetry.packet.outgoing.coaster.PacketGetCoasterName
 import me.jackdn.nl2telemetry.packet.outgoing.coaster.PacketSetEmergencyStop
 import me.jackdn.nl2telemetry.packet.outgoing.station.*
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.textResource
-import org.jetbrains.anko.toast
-import org.jetbrains.anko.uiThread
+import org.jetbrains.anko.*
 import java.net.InetSocketAddress
 
 class PanelActivity : Activity() {
@@ -156,6 +153,16 @@ class PanelActivity : Activity() {
 
     fun updateManualMode(on: Boolean) {
         manual_mode.textResource = if (on) R.string.manual_mode_disable else R.string.manual_mode_enable
+        dispatch_a.enabled = on
+        dispatch_b.enabled = on
+        gates_open.enabled = on
+        gates_close.enabled = on
+        restraints_open.enabled = on
+        restraints_close.enabled = on
+        platform_open.enabled = on
+        platform_close.enabled = on
+        flyercar_open.enabled = on
+        flyercar_close.enabled = on
     }
 
     fun updateEmergencyStop(on: Boolean) {

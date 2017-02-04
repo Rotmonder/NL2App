@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_panel.*
-import me.jackdn.nl2telemetry.IncomingPacket
 import me.jackdn.nl2telemetry.TelemetryClient
 import me.jackdn.nl2telemetry.packet.incoming.PacketIntPair
 import me.jackdn.nl2telemetry.packet.outgoing.PacketGetCurrentCoasterAndNearestStation
@@ -25,48 +24,48 @@ class PanelActivity : Activity() {
 
         gates_open.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetGates(client.getRandomRequestId(), coaster, station, true))
+            client?.send(PacketSetGates(client.getRandomRequestId(), coaster, station, true))
         }
 
         gates_close.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetGates(client.getRandomRequestId(), coaster, station, false))
+            client?.send(PacketSetGates(client.getRandomRequestId(), coaster, station, false))
         }
 
         restraints_open.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetHarness(client.getRandomRequestId(), coaster, station, true))
+            client?.send(PacketSetHarness(client.getRandomRequestId(), coaster, station, true))
         }
 
         restraints_close.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetHarness(client.getRandomRequestId(), coaster, station, false))
+            client?.send(PacketSetHarness(client.getRandomRequestId(), coaster, station, false))
         }
 
         platform_open.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetPlatform(client.getRandomRequestId(), coaster, station, false))
+            client?.send(PacketSetPlatform(client.getRandomRequestId(), coaster, station, false))
         }
 
         platform_close.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetPlatform(client.getRandomRequestId(), coaster, station, true))
+            client?.send(PacketSetPlatform(client.getRandomRequestId(), coaster, station, true))
         }
 
         flyercar_open.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetFlyerCar(client.getRandomRequestId(), coaster, station, true))
+            client?.send(PacketSetFlyerCar(client.getRandomRequestId(), coaster, station, true))
         }
 
         flyercar_close.repeatingListener {
             val client = client
-            client?.request<IncomingPacket>(PacketSetFlyerCar(client.getRandomRequestId(), coaster, station, false))
+            client?.send(PacketSetFlyerCar(client.getRandomRequestId(), coaster, station, false))
         }
 
         dispatch_a.repeatingListener {
             if (dispatch_b.isPressed) {
                 val client = client
-                client?.request<IncomingPacket>(PacketDispatch(client.getRandomRequestId(), coaster, station))
+                client?.send(PacketDispatch(client.getRandomRequestId(), coaster, station))
             }
         }
 

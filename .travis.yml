@@ -2,24 +2,24 @@ language: android
 jdk: oraclejdk8
 android:
   components:
-    - platform-tools
-    - tools
-    - build-tools-25.0.2
-    - android-25
-    - extra-android-m2repository
-    - extra-google-m2repository
-    - extra-android-support
-    - extra-google-google_play_services
+  - platform-tools
+  - tools
+  - build-tools-25.0.2
+  - android-25
+  - extra-android-m2repository
+  - extra-google-m2repository
+  - extra-android-support
+  - extra-google-google_play_services
 notifications:
   email: false
+before_install: gpg --passphrase $FILE_KEY KeyStore.jks.gpg
 deploy:
   provider: releases
   api_key:
-    secure: w76/NVnCP/6TDczvnChlJpoZ1HSp5VOCgwqHjBcRqwn4OQiZ75FoGnhTm/W+aOSIFVDi//z9hi4gBCd9rbp5sgWB3f1PSYoNx2FaaWq7TBvL9XxdBBtSTyXCievivo5bNUpl5HAH+SVGP3TvKSbeuy3/kNbHHSSJopNhTM274amrUJvt26QMvDPt6jreWDFB55j+1S/aRBlFZwqw+92/IL8OqxXJ2Lqv9LJFSEIfa4sI91KDzBHsFjBt6lpgG/WPMmyZQDcQ5+obmhJgzrleiL71QhYidfyxW+rncMSsC9+AtTo+xwlWNcTIEgVS/twfEc4+sromwkD4LnhlL9QdX/yUS8v7riP4QxmRzmkdgqgb2AXdlQUDhLmyGvfE2gVFB88iqYiA6YjvhEU2Gazw0f9oN7XDekS0o2cHkw6wbYi8mSFzTi2v2rHlT/2VMHhkrslKdXpjxEkvCmC/vZV5XWV9QDbnXBuwH68X4rXNWvtOzSx49MrtMnNCUh4DawSe0epZm4CB11YFT7hat4gB+gv9dNzwg626DinAicObE782IriCeo188QNeeKLlIZvZphP+7/ufjnfzXfJLxd+Im58v2GmX/K4fXBN81ieZYfu44beM/ilNWHKOTFMDeTUvbae9z0lwlEstEUVjeo7kJWCMVvTnuCNd0CjQvRpnYi0=
+    secure: dEXpvKipH23jAN9000QhCdPywyVms1t8mgEijxqrUZhkAp7kxx/FRc+18j9Brpa3HUgsxtJ8VwxRPNyPpXb62+U481WRLgZjzlxbt6Vt8qg854lpkyAmMQ+lY7W0hvxTKHe0EdESUI2x4+NotynA++pX2ZejMnylepfVoY4JlUGLSK2MrnwWmzSmkyloqXXsJZLpzkXvwr9jd9K9K6La0siTh43T1gagBiZfqFwZFKILVp5Yoh73Frlfuz0PEaY122Q/iLAHNKdQr57W8ZCgGu8xffFau5vh9i2u55P81eh7ArH5yFIdpYbvFdAF/Q7Tdn3U/+Nr7WTJwFchaUX8oJH5pirPQpOoFWdHmTw7hwHcqMZYwyhg27bHpinuF7qdbWDR3KqGGCwjXL0DLxCHeuXYgzqyUb5sp1XaB3JPQKFLyLyFOySneDAozGnfA48u6UsHO1rKsFaLPOGfqTuFbJnWsYxGEfAJmZAK9RFigGQ5sT5SPAhtE7vhyUDqECh8xOBor+bM2RHq8ZCXp4l8gPdg4oSLbM/CxMl+cTJyUwgTl7Fn5zhooGZvCZQRg28lcDQXPVrrDCM0a5xHnXlr8uPUvHH7MFeJdXFfHq84c7QGAudQMmiiVWvO6+6FWyiTk1f3tpjjUGuZ34yyR0RD6qtAFLZr+6/WLEnJWS0l29c=
   file: app/build/outputs/apk/app*release*.apk
   file_glob: true
   skip_cleanup: true
   on:
     repo: JackDn/NL2App
     tags: true
-before_install: gpg --passphrase $FILE_KEY KeyStore.jks.gpg

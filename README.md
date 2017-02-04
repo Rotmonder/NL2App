@@ -6,4 +6,4 @@ This Android app allows you to remote control NoLimits 2 stations.
 
 [Installation](https://github.com/JackDn/NL2App/wiki/Installation)
 
-![Control Panel](http://i.imgur.com/4N60rJt.png)
+![Control Panel](http://vps213640.ovh.net/nl2panel.png)

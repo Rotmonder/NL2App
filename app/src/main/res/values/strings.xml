@@ -19,4 +19,13 @@
     <string name="colon" translatable="false">:</string>
     <string name="default_port" translatable="false">15151</string>
     <string name="set_current_station">Set Station</string>
+    <string name="manual_mode_enable">Switch to Manual Mode</string>
+    <string name="manual_mode_disable">Switch to Auto Mode</string>
+    <string name="emergency_stop_enable">Enable Emergency Stop</string>
+    <string name="emergency_stop_disable">Disable Emergency Stop</string>
+    <string name="lost_connection">Lost connection</string>
+    <string name="not_in_play_mode">Not in Play Mode</string>
+    <string name="connecting_failed">Could not connect</string>
+    <string name="connected">Connected to NoLimits %1$s</string>
+    <string name="invalid_port">Invalid port</string>
 </resources>

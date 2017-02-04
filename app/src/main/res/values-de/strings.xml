@@ -18,4 +18,13 @@
     <string name="connect_host">Adresse</string>
     <string name="connect_port">Port</string>
     <string name="set_current_station">Station ändern</string>
+    <string name="manual_mode_enable">Zu Manuell wechseln</string>
+    <string name="manual_mode_disable">Zu Automatisch wechseln</string>
+    <string name="emergency_stop_enable">Not-Aus aktivieren</string>
+    <string name="emergency_stop_disable">Not-Aus deaktivieren</string>
+    <string name="lost_connection">Verbindung verloren</string>
+    <string name="not_in_play_mode">Nicht im Play-Modus</string>
+    <string name="connecting_failed">Verbindung fehlgeschlagen</string>
+    <string name="connected">Verbunden mit NoLimits %1$s</string>
+    <string name="invalid_port">Ungültiger Port</string>
 </resources>

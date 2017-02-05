@@ -28,56 +28,9 @@
     <GridLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/gates"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:rowCount="2"
-        android:columnCount="2"
-        android:layout_margin="8dp">
-
-        <TextView
-            android:text="@string/gates"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gates_title"
-            android:textAppearance="@android:style/TextAppearance.Material.Headline"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnSpan="2"
-            android:textAlignment="center"/>
-
-        <Button
-            android:text="@string/gates_open"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:gravity="center"
-            android:id="@+id/gates_open"/>
-
-        <Button
-            android:text="@string/gates_close"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:gravity="center"
-            android:id="@+id/gates_close"/>
-    </GridLayout>
-
-    <GridLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:id="@+id/restraints"
         android:layout_row="1"
-        android:layout_column="1"
+        android:layout_column="0"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
         android:layout_gravity="fill"
@@ -117,6 +70,53 @@
             android:layout_gravity="fill"
             android:gravity="center"
             android:id="@+id/restraints_close"/>
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/gates"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:text="@string/gates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gates_title"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:textAlignment="center"/>
+
+        <Button
+            android:text="@string/gates_open"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:id="@+id/gates_open"/>
+
+        <Button
+            android:text="@string/gates_close"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:id="@+id/gates_close"/>
     </GridLayout>
 
     <GridLayout

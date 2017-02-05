@@ -2,6 +2,7 @@ package me.jackdn.nl2controlpanel
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_panel.*
 import me.jackdn.nl2telemetry.TelemetryClient
@@ -13,7 +14,10 @@ import me.jackdn.nl2telemetry.packet.outgoing.PacketGetCurrentCoasterAndNearestS
 import me.jackdn.nl2telemetry.packet.outgoing.coaster.PacketGetCoasterName
 import me.jackdn.nl2telemetry.packet.outgoing.coaster.PacketSetEmergencyStop
 import me.jackdn.nl2telemetry.packet.outgoing.station.*
-import org.jetbrains.anko.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.textResource
+import org.jetbrains.anko.toast
+import org.jetbrains.anko.uiThread
 import java.net.InetSocketAddress
 
 class PanelActivity : Activity() {
@@ -90,7 +94,7 @@ class PanelActivity : Activity() {
                         finish()
                     }
                 }
-                Thread.sleep(500)
+                Thread.sleep(250)
             }
         }
     }
@@ -102,6 +106,7 @@ class PanelActivity : Activity() {
             val result = client?.request<PacketIntPair>(PacketGetCurrentCoasterAndNearestStation(client.getRandomRequestId())) ?: return@doAsync
             coaster = result.int1
             station = result.int2
+            Log.d("Coasters", "Selected coaster $coaster, station $station")
             update()
         }
     }
@@ -148,21 +153,21 @@ class PanelActivity : Activity() {
             updateManualMode(state.manualDispatch)
             updateEmergencyStop(state.emergencyStop)
             station_name.text = stationName
+            dispatch_a.setAvailable(state.canDispatch)
+            dispatch_b.setAvailable(state.canDispatch)
+            gates_open.setAvailable(state.canOpenGates)
+            gates_close.setAvailable(state.canCloseGates)
+            restraints_open.setAvailable(state.canOpenHarness)
+            restraints_close.setAvailable(state.canCloseHarness)
+            platform_open.setAvailable(state.canRaisePlatform)
+            platform_close.setAvailable(state.canLowerPlatform)
+            flyercar_open.setAvailable(state.canUnlockFlyerCar)
+            flyercar_close.setAvailable(state.canLockFlyerCar)
         }
     }
 
     fun updateManualMode(on: Boolean) {
         manual_mode.textResource = if (on) R.string.manual_mode_disable else R.string.manual_mode_enable
-        dispatch_a.enabled = on
-        dispatch_b.enabled = on
-        gates_open.enabled = on
-        gates_close.enabled = on
-        restraints_open.enabled = on
-        restraints_close.enabled = on
-        platform_open.enabled = on
-        platform_close.enabled = on
-        flyercar_open.enabled = on
-        flyercar_close.enabled = on
     }
 
     fun updateEmergencyStop(on: Boolean) {
